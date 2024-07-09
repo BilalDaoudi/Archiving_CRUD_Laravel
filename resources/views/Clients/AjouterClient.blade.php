@@ -15,19 +15,12 @@
         }
     </style>
 </head>
-
 <body>
-
     <div class="wrapper">
-
-
         @extends('layouts.main-header')
         @section('title','Ajouter Client')
-
         @include('layouts.main-sidebar')
-
         <div class="content-wrapper" style="margin-top: 50px;background-color:antiquewhite;">
-
             <form method="post" action="{{ route('client.store') }}">
                 @csrf
                 <div class="row p-40">
