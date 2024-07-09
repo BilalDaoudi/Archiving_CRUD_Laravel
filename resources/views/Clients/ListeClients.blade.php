@@ -13,7 +13,6 @@
         body {
             overflow-y: hidden;
         }
-
         tbody tr:hover {
             font-weight: 700;
             color: brown;
@@ -23,8 +22,6 @@
         setTimeout(function() {
             document.querySelector('.message').style.display = 'none';
         }, 1500);
-
-
         function Recherche(ip) {
             let val = ip.value;
             var x = new XMLHttpRequest();
@@ -32,13 +29,10 @@
                 x.open("GET", `/Clients/search/`, true);
             else
                 x.open("GET", `/Clients/search/${val}`, true);
-
             x.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     T_Objects = JSON.parse(this.responseText);
-
                     document.getElementById("resultats").innerHTML = "";
-
                     // alert(this.responseText);
                     // document.getElementById("resultats").innerHTML = JSON.parse(this.responseText);
                     for (const i in T_Objects) {
@@ -50,7 +44,6 @@
                         ligne += `<td>${T_Objects[i].Nationalite}</td>`;
                         ligne += `<td>${T_Objects[i].Telephone}</td>`;
                         ligne += `<td>${T_Objects[i].Permis}</td>`;
-
                         ligne += `<td>  
                                         <form method="post" action="/Clients/${T_Objects[i].CIN}">
                                             @csrf
@@ -66,31 +59,20 @@
                         ligne += "</tr>";
 
                         document.getElementById("resultats").innerHTML += ligne;
-
                     }
-
                 }
             };
             x.send();
         }
     </script>
 </head>
-
 <body>
-
     <div class="wrapper">
-
-
         @extends('layouts.main-header')
         @section('title','Liste Clients')
-
         @include('layouts.main-sidebar')
-
         <div class="content-wrapper" style="margin-top: 60px;background-color:antiquewhite;">
-
             <div class="row m-2">
-
-
                 <div class="col-4">
                     <div class="message">
                         @if(session('success'))
