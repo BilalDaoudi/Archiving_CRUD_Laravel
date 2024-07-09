@@ -23,13 +23,8 @@
         <li class="nav-item fullscreen">
             <a id="btnFullscreen" href="#" class="button-toggle-nav inline-block pull-left"><i class="ti-fullscreen"></i></a>
         </li>
-        <!-- <li class="nav-item fullscreen">
-            <a id="btnFullscreen" href="#" class="nav-link"><i class="ti-fullscreen"></i></a>
-        </li> -->
-
     </ul>
     <ul class="nav navbar-nav">
-
         <li class="nav-item">
             <div>
                 <h4><b><i>@yield('title')</i></b></h4>
@@ -37,7 +32,6 @@
         </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
-
         <li class="nav-item dropdown mr-30">
             <a class="nav-link nav-pill user-avatar" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <img src="../assets/images/bilal.jpg" alt="avatar">
