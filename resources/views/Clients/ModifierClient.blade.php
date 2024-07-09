@@ -15,29 +15,19 @@
         }
     </style>
 </head>
-
 <body>
-
     <div class="wrapper">
-
-
-
         @extends('layouts.main-header')
         @section('title')
         Modifier Client {{$row->CIN}}
         @endsection
-
         @include('layouts.main-sidebar')
-
         <div class="content-wrapper" style="margin-top: 50px;background-color:antiquewhite;">
-
             <form method="post" action="{{ route('client.update',$row->CIN) }}">
                 @csrf
                 @method("PUT")
                 <div class="row p-40">
-
                     <div class="col-6">
-
                         <input type="hidden" name="CIN" value="{{ $row->CIN }}">
                         <!-- <div class="form-group">
                             <label for="CIN" class="pl-10"><b>CIN :</b></label>
@@ -110,10 +100,6 @@
     </div>
     </div>
     </div>
-
-
     @include('layouts.footer-scripts')
-
 </body>
-
 </html>
