@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class VoitureController extends Controller
@@ -10,12 +8,10 @@ class VoitureController extends Controller
     {
         //
     }
-
     public function create()
     {
         //
     }
-
     public function store(Request $request)
     {
         //
@@ -28,13 +24,10 @@ class VoitureController extends Controller
     {
         //
     }
-
-   
     public function update(Request $request, $id)
     {
         //
     }
-
     public function destroy($id)
     {
         //
