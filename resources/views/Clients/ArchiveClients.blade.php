@@ -13,7 +13,6 @@
         body {
             overflow-y: hidden;
         }
-
         tbody tr:hover {
             font-weight: 700;
             color: brown;
@@ -23,7 +22,6 @@
         setTimeout(function() {
             document.querySelector('.message').style.display = 'none';
         }, 1500);
-
         function Recherche(ip) {
             let val = ip.value;
             var x = new XMLHttpRequest();
@@ -31,13 +29,10 @@
                 x.open("GET", `/ArchiveClients/search/`, true);
             else
                 x.open("GET", `/ArchiveClients/search/${val}`, true);
-
             x.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     T_Objects = JSON.parse(this.responseText);
-
                     document.getElementById("resultats").innerHTML = "";
-
                     // alert(this.responseText);
                     // document.getElementById("resultats").innerHTML = JSON.parse(this.responseText);
                     for (const i in T_Objects) {
@@ -64,31 +59,21 @@
                                         </div>
                                     </td>`;
                         ligne += "</tr>";
-
                         document.getElementById("resultats").innerHTML += ligne;
                     }
-
                 }
             };
             x.send();
         }
     </script>
 </head>
-
 <body>
-
     <div class="wrapper">
-
-
         @extends('layouts.main-header')
         @section('title','Archive Clients')
-
         @include('layouts.main-sidebar')
-
         <div class="content-wrapper" style="margin-top: 60px;">
-
             <div class="row m-2">
-
                 <div class="col-4">
                     <div class="message">
                         @if(session('success'))
@@ -112,10 +97,8 @@
                     </div>
                     <!-- <input type="text" class="form-control p-3 border" style="border-radius:10px;" placeholder="Rechercher ......" /> -->
                 </div>
-
                 <div class="col-2"></div>
             </div>
-
             <div>
                 <table class="table table-bordered table-hover table-striped table-sm text-center table-light">
                     <thead style="font-size:larger;">
@@ -141,7 +124,6 @@
                             <td>{{$row->Telephone}}</td>
                             <td>{{$row->Permis}}</td>
                             <td>
-
                                 <div class="btn-group" role="group">
                                 <form method="post" action="{{ route('client.restore',$row->CIN) }}">
                                         @csrf
