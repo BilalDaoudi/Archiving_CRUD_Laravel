@@ -13,18 +13,11 @@
 <body>
 
     <div class="wrapper">
-
-
         @extends('layouts.main-header')
         @section('title','Dashboard')
-
         @include('layouts.main-sidebar')
-
         <div class="content-wrapper" style="margin-top: 50px;">
-
-
-Dashboard
-
+                Dashboard
         </div>
     </div>
     </div>
