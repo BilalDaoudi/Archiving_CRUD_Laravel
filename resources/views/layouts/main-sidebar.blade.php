@@ -56,21 +56,6 @@
                             <li> <a href="{{ route('client.index') }}"><i class="ti-list"></i>Liste Réservations</a> </li>
                         </ul>
                     </li> -->
-                  
-
-                    <!-- <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard">
-                            <div class="pull-left"><i class="ti-archive"></i><span class="right-nav-text">Archivage</span>
-                            </div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="dashboard" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{ route('client.archive') }}"><i class="ti-user"></i>Clients</a> </li>
-                            <li> <a href="#"><i class="ti-car"></i>Voitures</a> </li>
-                            <li> <a href="#"><i class="ti-calendar"></i>Réseravations</a> </li>
-                        </ul>
-                    </li> -->
                 </ul>
             </div>
         </div>
