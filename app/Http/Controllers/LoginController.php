@@ -11,10 +11,8 @@ class LoginController extends Controller
         return view("login");
     }
     public function login(Request $req){
-        
         echo $req->email;
         echo $req->password;
-        
         // $T_values = [
         //     "email" => $req->email,
         //     "password" => $req->password
