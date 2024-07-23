@@ -11,8 +11,6 @@ use Illuminate\Support\Facades\Route;
 // })->name("dashbord");
 // Route::get('/login',[LoginController::class,"index"])->name("login.index");
 // Route::post('/login',[LoginController::class,"login"])->name("login.login");
-
-
 Route::get('/', [ClientController::class, "index"])->name("client.index");
 Route::get('/Clients/search/{client?}',[ClientController::class,"search"])->name("client.search");
 Route::post('/Clients', [ClientController::class, "store"])->name("client.store");
