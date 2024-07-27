@@ -8,17 +8,20 @@ use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
+    
     // ***************************************************** Liste Client ****************************************************************************************
     public function index()
     {
         $clients = Client::paginate(10);
         return view('Clients.ListeClients', ["rows" => $clients]);
     }
+    
     // ***************************************************** Page Ajouter Client *********************************************************************************
     public function create()
     {
         return view('Clients.AjouterClient');
     }
+    
     // ***************************************************** Ajouter Client ***************************************************************************************
     public function store(ClientRequest $request)
     {
@@ -26,12 +29,7 @@ class ClientController extends Controller
         Client::create($T_values);
         return to_route("client.index")->with("success", "Client a été ajouté avec succès ");
     }
-    // ************************************************************************************************************************************************************
-    public function show($id)
-    {
-        //
-    }
-
+    
     // ***************************************************** Page Modifier Client *********************************************************************************
     public function edit(Client $client)
     {
