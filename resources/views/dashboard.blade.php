@@ -11,7 +11,6 @@
     @include('layouts.head')
 </head>
 <body>
-
     <div class="wrapper">
         @extends('layouts.main-header')
         @section('title','Dashboard')
@@ -22,10 +21,6 @@
     </div>
     </div>
     </div>
-
-
     @include('layouts.footer-scripts')
-
 </body>
-
 </html>
