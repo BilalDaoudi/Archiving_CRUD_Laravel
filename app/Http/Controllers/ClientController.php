@@ -8,20 +8,17 @@ use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
-    
     // ***************************************************** Liste Client ****************************************************************************************
     public function index()
     {
         $clients = Client::paginate(10);
         return view('Clients.ListeClients', ["rows" => $clients]);
     }
-    
     // ***************************************************** Page Ajouter Client *********************************************************************************
     public function create()
     {
         return view('Clients.AjouterClient');
     }
-    
     // ***************************************************** Ajouter Client ***************************************************************************************
     public function store(ClientRequest $request)
     {
