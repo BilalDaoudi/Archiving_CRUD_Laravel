@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     @include('layouts.head')
     <style>
+        
         body {
             overflow-y: hidden;
         }
+        
     </style>
 </head>
 <body>
+    
     <div class="wrapper">
         @extends('layouts.main-header')
         @section('title')
