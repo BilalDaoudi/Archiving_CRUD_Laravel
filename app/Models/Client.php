@@ -10,14 +10,9 @@ class Client extends Model
 {
     use HasFactory,SoftDeletes;
     protected $primaryKey = 'CIN';
-
     public $incrementing = false;
-
     protected $fillable = ["CIN","Nom","Prenom","DateNaissance","Nationalite","Telephone","Permis"];
-
     public function getRouteKeyName(){
         return "CIN";
     }
-
-    
 }
