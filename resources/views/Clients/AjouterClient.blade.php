@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     @include('layouts.head')
+    
     <style>
         body {
             overflow-y: hidden;
         }
     </style>
+    
 </head>
 <body>
     
     <div class="wrapper">
+        
         @extends('layouts.main-header')
         @section('title','Ajouter Client')
         @include('layouts.main-sidebar')
+        
         <div class="content-wrapper" style="margin-top: 50px;background-color:antiquewhite;">
             <form method="post" action="{{ route('client.store') }}">
                 @csrf
