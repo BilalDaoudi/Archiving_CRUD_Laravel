@@ -11,11 +11,14 @@
         body {
             overflow-y: hidden;
         }
-        tbody tr:hover {
+        tbody tr:hover
+        {
             font-weight: 700;
             color: brown;
         }
+        
     </style>
+    
     <script>
         setTimeout(function() {
             document.querySelector('.message').style.display = 'none';
