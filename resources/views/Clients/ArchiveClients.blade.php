@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     @include('layouts.head')
+    
     <style>
         body {
             overflow-y: hidden;
@@ -14,6 +17,8 @@
             color: brown;
         }
     </style>
+
+    
     <script>
         setTimeout(function() {
             document.querySelector('.message').style.display = 'none';
@@ -62,8 +67,11 @@
             x.send();
         }
     </script>
+
+    
 </head>
 <body>
+    
     <div class="wrapper">
         @extends('layouts.main-header')
         @section('title','Archive Clients')
@@ -149,6 +157,8 @@
 
     @include('layouts.footer-scripts')
 
+
+    
 </body>
 
 </html>
