@@ -6,19 +6,27 @@ use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
+
 class ClientController extends Controller
 {
+
+    
     // ***************************************************** Liste Client ****************************************************************************************
     public function index()
     {
         $clients = Client::paginate(10);
         return view('Clients.ListeClients', ["rows" => $clients]);
     }
+
+    
     // ***************************************************** Page Ajouter Client *********************************************************************************
     public function create()
     {
         return view('Clients.AjouterClient');
     }
+
+    
     // ***************************************************** Ajouter Client ***************************************************************************************
     public function store(ClientRequest $request)
     {
@@ -26,12 +34,16 @@ class ClientController extends Controller
         Client::create($T_values);
         return to_route("client.index")->with("success", "Client a été ajouté avec succès ");
     }
+
+    
     
     // ***************************************************** Page Modifier Client *********************************************************************************
     public function edit(Client $client)
     {
         return view('Clients.ModifierClient', ["row" => $client]);
     }
+
+    
     // ***************************************************** Modifier Client *********************************************************************************
     public function update(Request $request, Client $client)
     {
@@ -47,12 +59,16 @@ class ClientController extends Controller
         $client->fill($T_values)->save();
         return to_route("client.index")->with("success", "Client a été sauvgardé avec succès ");
     }
+
+    
     // ***************************************************** Archiver Client *********************************************************************************
     public function destroy(Client $client)
     {
         $client->delete();
         return back()->with("delete", "Client a été archivé avec succès ");
     }
+
+    
     // ***************************************************** Rechercher Client *******************************************************************************
     public function search($client = NULL)
     {
@@ -69,24 +85,32 @@ class ClientController extends Controller
         }
         echo $clients;
     }
+
+    
     // ***************************************************** Supprimer Client *******************************************************************************
     public function forcedelete($client)
     {
         Client::onlyTrashed()->where("CIN", $client)->forceDelete();
         return back()->with("delete", "Client a été supprimé avec succès ");
     }
+
+    
     // ***************************************************** Afficher Client Archiver ************************************************************************
     public function archive()
     {
         $clients = Client::onlyTrashed()->paginate(10);
         return view('Clients.ArchiveClients', ["rows" => $clients]);
     }
+
+    
     // ****************************************** Restore Client *********************************************************************************************
     public function restore($client)
     {
         Client::onlyTrashed()->find($client)->restore();
         return back()->with("success", "Client a été restauré avec succès ");
     }
+
+    
     // ****************************************** Rechercher Client Archiver *********************************************************************************
     public function searcharchive($client = NULL)
     {
@@ -96,4 +120,6 @@ class ClientController extends Controller
             $clients = DB::table('clients')->where('CIN', 'REGEXP', $client)->whereNotNull('deleted_at')->get()->forPage(1, 10);
         echo $clients;
     }
+
+    
 }
